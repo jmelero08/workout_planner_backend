@@ -2,7 +2,8 @@ class Api::V1::WorkoutPlansController < ApplicationController
 
     def index
         workout_plans = WorkoutPlan.all 
-        render json: workout_plans
+        #render json: workout_plans
+        render json: WorkoutPlanSerializer.new(workout_plans)
     end
 
     def create
