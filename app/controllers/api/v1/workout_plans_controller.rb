@@ -9,7 +9,7 @@ class Api::V1::WorkoutPlansController < ApplicationController
     def create
         workout_plan = WorkoutPlan.new(workout_plan_params)
         if workout_plan.save
-            render json: workout_plan, status: :accepted
+            render json: WorkoutPlanSerializer.new(workout_plan), status: :accepted
         else
             render json: {errors: workout_plan.errors.full_messages}, status: :unprocessible_entity
         end
