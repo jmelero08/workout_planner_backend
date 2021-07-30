@@ -1,5 +1,4 @@
 class Api::V1::WorkoutPlansController < ApplicationController
-    skip_before_action :authorized
 
     def index
         workout_plans = WorkoutPlan.all 
